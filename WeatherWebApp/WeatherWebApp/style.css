@@ -1,0 +1,77 @@
+body {
+  margin: 0px;
+}
+
+p {
+  font-family: 'Times New Roman', Times, serif;
+  color: #444444;
+  font-weight: bold;
+}
+
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+nav #logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 170px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 200px;
+}
+
+nav #logo p {
+  font-size: 24px;
+}
+
+nav #search {
+  margin-left: 200px;
+}
+
+nav #search input {
+  height: 45px;
+  width: 200px;
+  background-color: #eeeeee;
+  border: none;
+  padding: 0px 20px;
+  font-size: 15px;
+}
+
+nav #search input:focus {
+  outline-style: none;
+  border: solid 1px #4751d4;
+  background-color: #f7f7f7;
+}
+
+nav #search input[type=submit] {
+  background-color: #4751d4;
+  width: 100px;
+  color: white;
+  font-weight: bold;
+}
+
+nav #search input[type=submit]:hover {
+  background-color: #2931a7;
+}
+
+article {
+  background-image: url(media/background.jpg);
+  background-position: left;
+  background-repeat: space;
+  background-size: cover;
+  height: 600px;
+}
+/*# sourceMappingURL=style.css.map */

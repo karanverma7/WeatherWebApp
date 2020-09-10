@@ -35,7 +35,7 @@
         <div id="search">
             <form action="." method="POST">
                 {% csrf_token %}
-                <input type="text" name="city" placeholder="Enter the city">
+                <input type="text" name="city" placeholder="Enter the city" required>
                 <input type="submit" name="submit" value="Search">
             </form>
         </div>
@@ -44,11 +44,12 @@
         {% if city_weather %}
         <section id="container">
             <div id="image">
-                <h1>{{ city_weather.name }}, {{ city_weather.country }}</h1>
+                <h1>{{ city_weather.name }}</h1>
             </div>
             <div id="cityInfo">
                 <div id="description">
-                    <img src="http://openweathermap.org/img/w/{{ city_weather.icon }}.png" height="80px" alt="icon">
+                    <div id="imgContainer"><img src="http://openweathermap.org/img/w/{{ city_weather.icon }}.png" height="80px" alt="icon"></div>
+                    
                     <div id="condition">{{ city_weather.description }}</div> 
                 </div>
                 <hr style="margin-bottom: 20px;">
@@ -89,6 +90,11 @@
                     </div>
             </div>
         </section>
+        {% elif message %}
+            <div id="notFound">
+                <img src="/media/notFound.png" alt="notFound"> <br>
+                {{ message }}
+            </div>
         {% endif %}
     </article>
     <footer>

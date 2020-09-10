@@ -108,9 +108,18 @@ article {
                 flex-direction: column;
                 align-items: center;
                 
-                img {
-                    padding: 35px 0px 15px 0px;
+                #imgContainer {
+                    background-color: rgb(191, 196, 255);
+                    height: 80px;
+                    width: 80px;
+                    margin: 35px 0px 15px 0px;
+                    border-radius: 50%;
+
+                    img {
+                        padding-left: 2px;
+                    }
                 }
+
             }
 
             hr {
@@ -134,6 +143,22 @@ article {
                 }
             }
         }
+    }
+}
+
+#notFound {
+    
+    margin: auto;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 24px;
+    font-weight: 550;
+
+    color: #2931a7;
+
+    img {
+        height: 300px;
+        width: auto;;
     }
 }
 
@@ -203,12 +228,10 @@ footer {
                     flex-direction: row;
                     margin-top: 40px;
                     
-                    img {
-                        padding: 0px;
-                        height: 75px;
-                        width: auto;
+                    #imgContainer {
+                        margin: 0px;
                     }
-
+                    
                     #condition {
                         align-self: flex-end;
                         font-size: 50px;
@@ -282,12 +305,16 @@ footer {
                     flex-direction: row;
                     margin: 20px 40px 0px 40px;
                     
-                    img {
-                        padding: 0px;
+                    #imgContainer {
                         height: 55px;
-                        width: auto;
+                        width: 55px;
+    
+                        img {
+                            height: 55px;
+                            width: auto;
+                        }
                     }
-
+                    
                     #condition {
                         align-self: flex-end;
                         font-size: 35px;
@@ -313,6 +340,17 @@ footer {
 
                 margin: 0px auto;
             }
+        }
+    }
+
+    #notFound {
+    
+        font-size: 20px;
+        font-weight: 500;
+
+        img {
+            height: 220px;
+            width: auto;;
         }
     }
 

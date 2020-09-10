@@ -131,8 +131,16 @@ article #container #cityInfo #description {
           align-items: center;
 }
 
-article #container #cityInfo #description img {
-  padding: 35px 0px 15px 0px;
+article #container #cityInfo #description #imgContainer {
+  background-color: #bfc4ff;
+  height: 80px;
+  width: 80px;
+  margin: 35px 0px 15px 0px;
+  border-radius: 50%;
+}
+
+article #container #cityInfo #description #imgContainer img {
+  padding-left: 2px;
 }
 
 article #container #cityInfo hr {
@@ -157,6 +165,20 @@ article #container #cityInfo .info .title {
 
 article #container #cityInfo .info .value {
   width: 100px;
+}
+
+#notFound {
+  margin: auto;
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 24px;
+  font-weight: 550;
+  color: #2931a7;
+}
+
+#notFound img {
+  height: 300px;
+  width: auto;
 }
 
 footer {
@@ -222,10 +244,8 @@ footer p {
             flex-direction: row;
     margin-top: 40px;
   }
-  article #container #cityInfo #description img {
-    padding: 0px;
-    height: 75px;
-    width: auto;
+  article #container #cityInfo #description #imgContainer {
+    margin: 0px;
   }
   article #container #cityInfo #description #condition {
     -ms-flex-item-align: end;
@@ -292,8 +312,11 @@ footer p {
             flex-direction: row;
     margin: 20px 40px 0px 40px;
   }
-  article #container #cityInfo #description img {
-    padding: 0px;
+  article #container #cityInfo #description #imgContainer {
+    height: 55px;
+    width: 55px;
+  }
+  article #container #cityInfo #description #imgContainer img {
     height: 55px;
     width: auto;
   }
@@ -317,6 +340,14 @@ footer p {
   }
   article #container #cityInfo hr {
     margin: 20px 5%;
+  }
+  #notFound {
+    font-size: 20px;
+    font-weight: 500;
+  }
+  #notFound img {
+    height: 220px;
+    width: auto;
   }
   footer p {
     font-size: 11px;

@@ -1,0 +1,104 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="shortcut icon" href="media/Logo.png" />
+    <title>The Weather App</title>
+    <style>
+        #bg_image {
+            position: fixed;
+            left: -20px;
+            top:-20px;
+            bottom:-20px;
+            right: -20px;
+            background: url('{{ img_src }}');
+            background-size: cover;
+            background-position: center;
+            filter: blur(5px) brightness(45%);
+        }
+        article #container #image {
+            background-image: url('{{ img_src }}');
+        }
+    </style>
+</head>
+<body>
+    <div id="bg_image"></div>
+    <nav>
+        <div id="logo">
+            <img src="media/Logo.png" alt="Logo" width="auto" height="45px">
+            <p>What's the weather today?</p>
+        </div>
+        <div id="search">
+            <form action="." method="POST">
+                {% csrf_token %}
+                <input type="text" name="city" placeholder="Enter the city" required>
+                <input type="submit" name="submit" value="Search">
+            </form>
+        </div>
+    </nav>
+    <article>
+        {% if city_weather %}
+        <section id="container">
+            <div id="image">
+                <h1>{{ city_weather.name }}</h1>
+            </div>
+            <div id="cityInfo">
+                <div id="description">
+                    <div id="imgContainer"><img src="http://openweathermap.org/img/w/{{ city_weather.icon }}.png" height="80px" alt="icon"></div>
+                    
+                    <div id="condition">{{ city_weather.description }}</div> 
+                </div>
+                <hr style="margin-bottom: 20px;">
+                    <div class="info">
+                        <div class="title">
+                            Temperature
+                        </div>
+                        <div class="value">
+                           {{ city_weather.temp }} &#730;C
+                        </div>
+                    </div>
+                    
+                    <div class="info">
+                        <div class="title">
+                            Humidity
+                        </div>
+                        <div class="value">
+                            {{ city_weather.humidity }}%
+                        </div>
+                    </div>
+                    
+                    <div class="info">
+                        <div class="title">
+                            Pressure
+                        </div>
+                        <div class="value">
+                            {{ city_weather.pressure }} Hg
+                        </div>
+                    </div>
+                    
+                    <div class="info">
+                        <div class="title">
+                            Wind Speed
+                        </div>
+                        <div class="value">
+                            {{ city_weather.wind }} km/h
+                        </div>
+                    </div>
+            </div>
+        </section>
+        {% elif message %}
+            <div id="notFound">
+                <img src="/media/notFound.png" alt="notFound"> <br>
+                {{ message }}
+            </div>
+        {% endif %}
+    </article>
+    <footer>
+       <p>&#169; 2020 The Weather App | Designed by Karan Verma </p> 
+    </footer>
+</body>
+</html>

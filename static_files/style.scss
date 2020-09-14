@@ -69,7 +69,7 @@ nav {
 
 article {
     position: absolute;
-    top: 120px;
+    top: 100px;
     width: 100%;
     height: 470px;
     display: grid;
@@ -88,11 +88,15 @@ article {
             height: 400px;
             background-position: center;
             background-size: cover;
+            position: relative;
             
             h1 {
+                position: absolute;
+                top: 0px;
                 font-family: Georgia, 'Times New Roman', Times, serif;
-                padding: 0px 20px;
-                opacity: 70%;
+                opacity: 80%;
+                padding: 5px 10px;
+                background-color: rgb(247, 247, 247);
             }
         }
 
@@ -148,18 +152,16 @@ article {
 }
 
 #notFound {
-    
     margin: auto;
     text-align: center;
     font-family: 'Courier New', Courier, monospace;
     font-size: 24px;
     font-weight: 550;
-
     color: #2931a7;
 
     img {
         height: 300px;
-        width: auto;;
+        width: auto;
     }
 }
 
@@ -357,6 +359,8 @@ footer {
     }
 
     footer {
+
+        top: 640px;
         p {
             font-size: 12px;
         }

@@ -15,18 +15,17 @@
             top:-20px;
             bottom:-20px;
             right: -20px;
-            background: url('{{ img_src }}');
+            background: url(media/city.jpg);
             background-size: cover;
             background-position: center;
             filter: blur(5px) brightness(45%);
+            z-index: -1;
         }
         article #container #image {
-            background-image: url('{{ img_src }}');
-        }
+            background-image: url(media/city.jpg);
     </style>
-</head>
+</html>
 <body>
-    <div id="bg_image"></div>
     <nav>
         <div id="logo">
             <img src="media/Logo.png" alt="Logo" width="auto" height="45px">
@@ -42,6 +41,7 @@
     </nav>
     <article>
         {% if city_weather %}
+        <div id="bg_image"></div>
         <section id="container">
             <div id="image">
                 <h1>{{ city_weather.name }}</h1>

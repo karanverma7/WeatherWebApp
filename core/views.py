@@ -1,5 +1,7 @@
 from django.shortcuts import render
 import requests
+from PIL import Image
+from io import BytesIO
 
 
 def index(request):
@@ -35,9 +37,14 @@ def index(request):
             'icon': r['weather'][0]['icon']
         }
         
-        img_src = r2['results'][0]['urls']['thumb']
+        img_src = r2['results'][0]['urls']['raw']
 
-        return render(request, 'index.html', {'city_weather': city_weather, 'img_src': img_src})
+        r3 = requests.get(img_src)
+
+        img = Image.open(BytesIO(r3.content))
+        img.save('media/city.jpg', quality=50)
+
+        return render(request, 'index.html', {'city_weather': city_weather})
     
     else:
         message = "City not found"
